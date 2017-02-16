@@ -25,15 +25,15 @@ namespace ProfHenryCopy
                 string dest = Path.Combine(destDirectory, name);
                 File.Copy(file, dest);
             }
-            string[] folders = Directory.GetDirectories(sourceDirectory);
+            string[] directories = Directory.GetDirectories(sourceDirectory);
 
-            Console.WriteLine("Trwa kopiowanie folder 1");
+            Console.WriteLine("Copy directory 1");
 
-            foreach (string folder in folders)
+            foreach (string directory in directories)
             {
-                string name = Path.GetFileName(folder);
+                string name = Path.GetFileName(direcotry);
                 string dest = Path.Combine(destDirectory, name);
-                CopyDirectHenr1(folder, dest);
+                CopyDirectHenr1(directory, dest);
             }
         }
 
@@ -51,15 +51,15 @@ namespace ProfHenryCopy
                 string dest = Path.Combine(destDirectory, name);
                 File.Copy(file, dest);
             }
-            string[] folders = Directory.GetDirectories(sourceDirectory);
+            string[] directories = Directory.GetDirectories(sourceDirectory);
 
             Console.WriteLine("Copy directory 2");
 
-            foreach (string folder in folders)
+            foreach (string directory in directories)
             {
-                string name = Path.GetFileName(folder);
+                string name = Path.GetFileName(directory);
                 string dest = Path.Combine(destDirectory, name);
-                CopyDirectHenr2(folder, dest);
+                CopyDirectHenr2(directory, dest);
             }
 
     }
@@ -74,7 +74,7 @@ namespace ProfHenryCopy
         }
  
 
-        static public void CopyFolder2(string sourceDirecotry, string destDirecotry, bool overwrite)
+        static public void CopyDirectory2(string sourceDirecotry, string destDirecotry, bool overwrite)
         {
          
 
@@ -87,15 +87,15 @@ namespace ProfHenryCopy
                 string dest = Path.Combine(destDirecotry, name);
                 File.Copy(file, dest, true);
             }
-            string[] folders = Directory.GetDirectories(sourceDirecotry);
+            string[] directories = Directory.GetDirectories(sourceDirecotry);
             
             Console.WriteLine("Copy directory 3");
 
-            foreach (string folder in folders)
+            foreach (string directory in directories)
             {
-                string name = Path.GetFileName(folder);
+                string name = Path.GetFileName(directory);
                 string dest = Path.Combine(destDirecotry, name);
-                CopyFolder2(folder, dest, true);
+                CopyDirectory2(directory, dest, true);
             }
         }
 
@@ -137,7 +137,7 @@ namespace ProfHenryCopy
                 CopyFileHenry(file, destDirecotry);
                 Console.WriteLine("Copy file usr_v2 finished");
             
-                CopyFolder2(sourceDirectory2, destDirecotry2, true);
+                CopyDirectory2(sourceDirectory2, destDirecotry2, true);
                 Console.WriteLine("Copy directory 3 finished");
             }
             catch (Exception Ex)
